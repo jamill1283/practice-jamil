@@ -1,0 +1,134 @@
+#include <iostream>
+#include <string>
+
+int main(){
+
+std::string l_;
+std::string l_0;
+
+std::string l_1_1;
+std::string l_1_2;
+std::string l_1_3;
+
+std::string l_2_1;
+std::string l_2_2;
+std::string l_2_3;
+std::string l_2_4;
+std::string l_2_5;
+std::string l_2_6;
+
+std::string l_3_1;
+std::string l_3_2;
+std::string l_3_3;
+
+std::string ans;
+
+int a;
+
+
+l_0 = "On one beautiful day, the deer was playing by the river. While the deer was playing, he came across a stone with a letter telling him to look for honey.\n";
+
+//Branch 1
+l_1_1 = "While reading the lettered stone, the deer was absorbed into the letters found on the stone.\n";
+
+l_1_2 = " While reading the stone, a very faint voice was heard from a distance.\n";
+
+l_1_3 = "While reading the stone, a very loud voice was heard telling the Deer to leave the stone. That is the voice of the King Kapoor \n";
+
+//Branch 2
+l_2_1 = "The deer arrived at a beautiful place, full of greenery.\n";
+l_2_2 = "The deer arrived at a very scary valley.\n";
+l_2_3 = "The deer searched for the sound. Then he arrived and saw a bird in pain. The deer also uses its intellect to move the wood attached to the bird's feet.\n";
+l_2_4 = "The deer was scared, then ignored the faint voice. The deer ran towards a mountain and finally arrived at the foot of the mountain on the bank of a river.\n";
+l_2_5 =  "The deer was scared, then ignored the very fierce voice. The deer ran towards a mountain and finally arrived at the foot of the mountain on the bank of a river.\n";
+l_2_6 = "SThe deer boldly replied 'Hey vicious voice, what a noisy master servant is here'. Amazed by the deer's courage, the King Kapoor also told the deer not to continue the journey because of the danger of disease. However, it was ignored by the deer. \n";
+
+//Ending
+l_3_1 = "The deer then found honey. The king was attracted to the Deer, then married him.\n";
+l_3_2 = "The deer saved the bird. And at the same time it looks like a very beautiful glass former filled with honey. Apparently, the glass former belonged to the bird, and he presented the honey to the mdeer.\n";
+l_3_3 = "The deer did not manage to find the honey and was in pain. However, it appears that the king named the King Kapoor approached him to be brought back to the palace to be his wife.\n";
+
+
+  std::cout << "  _____         _   _  _____    _  __          _   _  _____ _____ _\n";  
+  std::cout << " / ____|  /\   | \ | |/ ____|  | |/ /    /\   | \ | |/ ____|_   _| |\n";                
+  std::cout << "| (___   /  \  |  \| | |  __   | ' /    /  \  |  \| | |      | | | |\n";                
+  std::cout << " \___ \ / /\ \ | . ` | | |_ |  |  <    / /\ \ | . ` | |      | | | |\n";                 
+  std::cout << " ____) / ____ \| |\  | |__| |  | . \  / ____ \| |\  | |____ _| |_| |____\n";             
+  std::cout << "|_____/_/    \_\_| \_|\_____|  |_|\_\/_/    \_\_| \_|\_____|_____|______|\n";            
+  std::cout << " __  __ ______ _   _  _____          _____  _____     __  __          _____  _    _\n";  
+  std::cout << "|  \/  |  ____| \ | |/ ____|   /\   |  __ \|_   _|   |  \/  |   /\   |  __ \| |  | |\n"; 
+  std::cout << "| \  / | |__  |  \| | |       /  \  | |__) | | |     | \  / |  /  \  | |  | | |  | |\n"; 
+  std::cout << "| |\/| |  __| | . ` | |      / /\ \ |  _  /  | |     | |\/| | / /\ \ | |  | | |  | |\n"; 
+  std::cout << "| |  | | |____| |\  | |____ / ____ \| | \ \ _| |_    | |  | |/ ____ \| |__| | |__| |\n"; 
+  std::cout << "|_|  |_|______|_| \_|\_____/_/    \_\_|  \_\_____|   |_|  |_/_/    \_\_____/ \____/\n\n\n\n"; 
+  
+
+
+for (int k = 1; k == 1; k){
+
+    std::cout << l_0 <<"\n";
+    std::cout << "What Happens Next?\n\n";
+
+
+    std::cout << "1) " << l_1_1 << "\n";
+    std::cout << "2) " << l_1_2 << "\n";
+    std::cout << "3) " << l_1_3 << "\n";
+    
+    std::cout << "Choose One Answer : ";
+    std::cin >> a;
+
+  int i;
+
+for (i = a; i > 3 || i < 1; i){
+    
+    std::cout << "The Shepherd, is your decision right? : ";
+    std::cin >> i;
+     
+    }
+    
+    std::cout << "What Happens Next?\n\n";
+    
+if (i == 1){
+    std::cout << "1) " << l_2_1 << "\n";
+    std::cout << "2) " << l_2_2 << "\n";
+    }
+else if (i == 2){
+    std::cout << "1) " << l_2_3 << "\n";
+    std::cout << "2) " << l_2_4 << "\n";
+    }
+else if (i == 3){
+    std::cout << "1) " << l_2_5 << "\n";
+    std::cout << "2) " << l_2_6 << "\n";
+    }
+
+    std::cout << "What is your choice?: ";
+    std::cin >> a;
+
+int j;
+
+for (j = a; j < 1 || j > 2; j){
+    
+    std::cout << "The Shepherd, is your decision right? : ";
+    std::cin >> j;
+
+    }
+
+if ((i == 1 && j == 2) || (i == 2 && j == 2)){
+      std::cout << l_3_1 << "\n";
+    }
+else if ((i == 2 && j == 1) || (i == 3 && j == 2)){
+      std::cout << l_3_2 << "\n";
+    }
+else if ((i == 1 && j == 1) || (i == 3 && j == 1)){
+      std::cout << l_3_3 << "\n";
+    }
+
+std::cout << "Press 1 for next adventure or other number to end: ";
+std::cin >> k;
+std::cout << "\n";
+
+}
+    std::cout << "THE END\n";
+
+  return 0;
+}
