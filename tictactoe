@@ -1,0 +1,453 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+
+//test permutated vector
+bool test_vector(std::vector<std::string> v1,std::vector<std::string>v2){
+
+bool got_it = false;
+for (int i = 0;i < v1.size() && got_it == false;i++){
+  for(int j = 0;j < v2.size() && got_it == false;j++){
+    if(v1[i] == v2[j]){
+      std::cout<< "\n\nYOU WIN!";
+      got_it = true;
+      return true;
+  }
+}
+}
+}
+
+//create vector for permutation element
+std::vector<std::string> perm_v(std::string s){
+    std::vector<std::string> v;
+    do{
+      v.push_back(s);
+    }while (std::next_permutation(s.begin(), s.end()));
+
+    return v;
+}
+
+//create vector for tictactoe reference element
+std::vector<char> alpha(int i, int j,std::vector<char> iter){
+std::string alpha_in = "abcdefghi";
+
+char in;
+             if (i == 2 && j == 7 ){
+              in = alpha_in[0];
+              std::cout<< in;
+              iter.push_back(in);}
+            if (i == 2 && j == 22 ){
+              in = alpha_in[1];
+              std::cout<< in;
+              iter.push_back(in);}
+            if (i == 2 && j == 37 ){
+              in = alpha_in[2];
+              std::cout<< in;
+              iter.push_back(in);}
+            if (i == 8 && j == 7 ){
+              in = alpha_in[3];
+              std::cout<< in;
+              iter.push_back(in);}
+            if (i == 8 && j == 22 ){
+              in = alpha_in[4];
+              std::cout<< in;
+              iter.push_back(in);}
+            if (i == 8 && j == 37 ){
+              in = alpha_in[5];
+              std::cout<< in;
+              iter.push_back(in);}
+            if (i == 14 && j == 7 ){
+              in = alpha_in[6];
+              std::cout<< in;
+              iter.push_back(in);}
+            if (i == 14 && j == 22 ){
+              in  = alpha_in[7];
+              std::cout<< in;
+              iter.push_back(in);}
+            if (i == 14 && j == 37 ){
+              in = alpha_in[8];
+              std::cout<< in;
+              iter.push_back(in);}
+
+              std::vector<char> container = iter;
+
+return container;
+};
+
+int main(){
+
+bool print = true;
+char in;
+std::vector<char> container;
+char p1_in;
+char p2_in;
+bool guess = false;
+std::string accu_guess_p1;
+std::string accu_guess_p2;
+int count = 0;
+
+
+std::cout<< "\n\n\n";
+
+    std::vector<std::string> new_perm_v1;
+    std::vector<std::string> new_perm_v2;
+    std::vector<std::string> new_perm_v3;
+    std::vector<std::string> new_perm_v4;
+    std::vector<std::string> new_perm_v5;
+    std::vector<std::string> new_perm_v6;
+    std::vector<std::string> new_perm_v7;
+    std::vector<std::string> new_perm_v8;
+
+    new_perm_v1 = perm_v("abc");
+    new_perm_v2 = perm_v("def");
+    new_perm_v3 = perm_v("ghi");
+    new_perm_v4 = perm_v("adg");
+    new_perm_v5 = perm_v("beh");
+    new_perm_v6 = perm_v("cfi");
+    new_perm_v7 = perm_v("aei");
+    new_perm_v8 = perm_v("ceg");
+
+std::cout << " ______  ____   __ ______   ____    __ ______   ___     ___\n";
+std::cout << "|      ||    | /  ]      | /    |  /  ]      | /   \   /  _]\n";
+std::cout << "|      | |  | /  /|      ||  o  | /  /|      ||     | /  [\n";
+std::cout << "|_|  |_| |  |/  / |_|  |_||     |/  / |_|  |_||  O  ||    _]\n";
+std::cout << "  |  |   |  /   \_  |  |  |  _  /   \_  |  |  |     ||   [\n";
+std::cout << "  |  |   |  \     | |  |  |  |  \     | |  |  |     ||     |\n";
+std::cout << "  |__|  |____\____| |__|  |__|__|\____| |__|   \___/ |_____|\n";
+
+
+//******************FOR FUTURE IMPLEMENTATION************************
+
+//create tictactoe board
+for (int i = 0; i < 17; i++){
+  if (i < 17 && (i != 5 && i != 11)){
+      for (int j = 0; j <= 45; j++){
+        //initialize vector container
+        //container = alpha(i,j);
+        //******begin insert alphabet code here*******
+        container = alpha(i,j, container);
+        //******end insert alphabet code here*******
+
+          if ((j != 15) && (j != 30)){
+                if ((i == 2 && j == 7 ) || (i == 2 && j == 22 )
+                  || (i == 2 && j == 37 ) || (i == 8 && j == 7 )
+                  || (i == 8 && j == 22 ) || (i == 8 && j == 37 )
+                  || (i == 14 && j == 7 ) || (i == 14 && j == 22 )
+                  || (i == 14 && j == 37 )){
+
+                  if (j == 7 || j ==22 || j == 37){
+                    std::cout << "";
+                  }
+                }
+                else {
+                  std::cout << " ";
+                  container.push_back('.');}
+              if (j == 45){
+                std::cout << "\n";
+              }
+            }
+          else if ((j == 15) || (j == 30)){
+          std::cout << "|";
+          }
+      }
+    }
+   else if (i < 17 && ((i == 5) || (i == 11))){
+      for (int j = 0; j <= 45; j++){
+        std::cout << "_";
+        if (j == 45){
+          std::cout << "\n";
+        }
+      }
+    }
+
+    //container.push_back(in); //store all iterated value in vector for later
+
+}
+
+//Display original vector container
+//std::cout << container.size();
+
+    for (int i = 0; i < container.size(); i++){
+      for (int j = 0; j < 15; j++){
+        if (i == (44 * j)){
+        std::cout << "\n";
+        }
+      }
+      std::cout<< container[i];
+    }
+
+std::vector<char> new_cont = container;
+
+while (guess == false && count < 5){
+
+
+//Modify Vector container based on user input player 1
+
+std::cout << "\n\nPlayer 1, YOUR TURN!. Choose where you want to cross : ";
+std::cin >> p1_in;
+std::cout << "\n";
+
+switch (p1_in){
+
+case 'a' :
+{int i = 0;
+new_cont.at(95) = 'X';
+break;}
+
+case 'b' :
+{int i = 1;
+new_cont.at(95 + (14*i)) = 'X';
+break;}
+
+case 'c' :
+{int i = 2;
+new_cont.at(95 + (14*i)) = 'X';
+break;}
+
+case 'd' :
+{int i = 0;
+new_cont.at(315 + (14*i)) = 'X';
+break;}
+
+case 'e' :
+{int i = 1;
+new_cont.at(315 + (14*i)) = 'X';
+break;}
+
+case 'f' :
+{int i = 2;
+new_cont.at(315 + (14*i)) = 'X';
+break;}
+
+case 'g' :
+{int i = 0;
+new_cont.at(535 + (14*i)) = 'X';
+break;}
+
+case 'h' :
+{int i = 1;
+new_cont.at(535 + (14*i)) = 'X';
+break;}
+
+case 'i' :
+{int i = 2;
+new_cont.at(535 + (14*i)) = 'X';
+break;}
+}
+
+accu_guess_p1 += p1_in;
+// Reprint vector container
+
+   for (int i = 0; i < new_cont.size(); i++){
+      for (int j = 0; j < 15; j++){
+        if (i == (44 * j)){
+        std::cout << "\n";
+        }
+      }
+      std::cout<< new_cont[i];
+    }
+
+    std::vector<std::string> accu_guess_p1_v;
+    accu_guess_p1_v.push_back(accu_guess_p1);
+
+
+//permutate input string and create vector from permutated string for player 1
+
+    sort(accu_guess_p1.begin(),accu_guess_p1.end());
+
+
+    if(accu_guess_p1.length() == 4){
+      for (int i = 0;i < accu_guess_p1.size();i++){
+        char store = accu_guess_p1[i]; //store character of string at index i
+        std::string sto_s; //initialize new variable as string
+        sto_s.append(1,store); //convert character to string to insert later
+        accu_guess_p1.erase(accu_guess_p1.begin() + i); //erase string at position i
+          do {
+              accu_guess_p1_v.push_back(accu_guess_p1);//create vector from the result of the permutation
+          }while (std::next_permutation (accu_guess_p1.begin(),accu_guess_p1.end()));//permute the string excluding character at position i
+        accu_guess_p1.insert(i, sto_s);//insert back the character
+      }
+    }
+
+    else if(accu_guess_p1.size() < 4){
+      for (int i = 0;i < accu_guess_p1.size();i++){
+
+          do {
+              accu_guess_p1_v.push_back(accu_guess_p1);//create vector from the result of the permutation
+          }while (std::next_permutation (accu_guess_p1.begin(),accu_guess_p1.end()));//permute the string excluding character at position i
+      }
+    }
+
+bool exit_prog1 = test_vector(accu_guess_p1_v,new_perm_v1);
+if (exit_prog1 == true){
+  std::cout << " Congratulation Player 1!\n ";
+  break;}
+bool exit_prog2 = test_vector(accu_guess_p1_v,new_perm_v2);
+if (exit_prog2 == true){
+  std::cout << " Congratulation Player 1!\n ";
+  break;}
+bool exit_prog3 = test_vector(accu_guess_p1_v,new_perm_v3);
+if (exit_prog3 == true){
+  std::cout << " Congratulation Player 1!\n  ";
+  break;}
+bool exit_prog4 = test_vector(accu_guess_p1_v,new_perm_v4);
+if (exit_prog4 == true){
+  std::cout << " Congratulation Player 1!\n  ";
+  break;}
+bool exit_prog5 = test_vector(accu_guess_p1_v,new_perm_v5);
+if (exit_prog5 == true){
+  std::cout << " Congratulation Player 1!\n  ";
+  break;}
+bool exit_prog6 = test_vector(accu_guess_p1_v,new_perm_v6);
+if (exit_prog6 == true){
+  std::cout << " Congratulation Player 1!\n  ";
+  break;}
+bool exit_prog7 = test_vector(accu_guess_p1_v,new_perm_v7);
+if (exit_prog7 == true){
+  std::cout << " Congratulation Player 1!\n  ";
+  break;}
+bool exit_prog8 = test_vector(accu_guess_p1_v,new_perm_v8);
+if (exit_prog8 == true){
+  std::cout << " Congratulation Player 1!\n  ";
+  break;}
+
+
+
+//Modify Vector container based on user input player 2
+
+std::cout << "\n\nPlayer 2, YOUR TURN!. Choose where you want to cross : ";
+std::cin >> p2_in;
+std::cout << "\n";
+
+switch (p2_in){
+
+case 'a' :
+{int i = 0;
+new_cont.at(95) = 'O';
+break;}
+
+case 'b' :
+{int i = 1;
+new_cont.at(95 + (14*i)) = 'O';
+break;}
+
+case 'c' :
+{int i = 2;
+new_cont.at(95 + (14*i)) = 'O';
+break;}
+
+case 'd' :
+{int i = 0;
+new_cont.at(315 + (14*i)) = 'O';
+break;}
+
+case 'e' :
+{int i = 1;
+new_cont.at(315 + (14*i)) = 'O';
+break;}
+
+case 'f' :
+{int i = 2;
+new_cont.at(315 + (14*i)) = 'O';
+break;}
+
+case 'g' :
+{int i = 0;
+new_cont.at(535 + (14*i)) = 'O';
+break;}
+
+case 'h' :
+{int i = 1;
+new_cont.at(535 + (14*i)) = 'O';
+break;}
+
+case 'i' :
+{int i = 2;
+new_cont.at(535 + (14*i)) = 'O';
+break;}
+}
+
+// Reprint vector container
+accu_guess_p2 = accu_guess_p2 + p2_in;
+
+   for (int i = 0; i < new_cont.size(); i++){
+      for (int j = 0; j < 15; j++){
+        if (i == (44 * j)){
+        std::cout << "\n";
+        }
+      }
+      std::cout<< new_cont[i];
+    }
+
+
+    std::vector<std::string> accu_guess_p2_v;
+    accu_guess_p2_v.push_back(accu_guess_p2);
+
+    //permutate input string and create vector from permutated string for player 2
+
+    sort(accu_guess_p1.begin(),accu_guess_p1.end());
+
+
+    if(accu_guess_p2.length() == 4){
+      for (int i = 0;i < accu_guess_p2.size();i++){
+        char store = accu_guess_p2[i]; //store character of string at index i
+        std::string sto_s; //initialize new variable as string
+        sto_s.append(1,store); //convert character to string to insert later
+        accu_guess_p2.erase(accu_guess_p2.begin() + i); //erase string at position i
+          do {
+              accu_guess_p2_v.push_back(accu_guess_p2);//create vector from the result of the permutation
+          }while (std::next_permutation (accu_guess_p2.begin(),accu_guess_p2.end()));//permute the string excluding character at position i
+        accu_guess_p2.insert(i, sto_s);//insert back the character
+      }
+    }
+
+    else if(accu_guess_p2.size() < 4){
+      for (int i = 0;i < accu_guess_p2.size();i++){
+
+          do {
+              accu_guess_p2_v.push_back(accu_guess_p2);//create vector from the result of the permutation
+          }while (std::next_permutation (accu_guess_p2.begin(),accu_guess_p2.end()));//permute the string excluding character at position i
+      }
+    }
+
+bool exit_prog21 = test_vector(accu_guess_p2_v,new_perm_v2);
+if (exit_prog21 == true){
+  std::cout << " Congratulation Player 2!\n  ";
+  break;}
+bool exit_prog22 = test_vector(accu_guess_p2_v,new_perm_v2);
+if (exit_prog22 == true){
+  std::cout << " Congratulation Player 2!\n  ";
+  break;}
+bool exit_prog23 = test_vector(accu_guess_p2_v,new_perm_v3);
+if (exit_prog23 == true){
+  std::cout << " Congratulation Player 2!\n  ";
+  break;}
+bool exit_prog24 = test_vector(accu_guess_p2_v,new_perm_v4);
+if (exit_prog24 == true){
+  std::cout << " Congratulation Player 2!\n  ";
+  break;}
+bool exit_prog25 = test_vector(accu_guess_p2_v,new_perm_v5);
+if (exit_prog25 == true){
+  std::cout << " Congratulation Player 2!\n  ";
+  break;}
+bool exit_prog26 = test_vector(accu_guess_p2_v,new_perm_v6);
+if (exit_prog26 == true){
+  std::cout << " Congratulation Player 2!\n   ";
+  break;}
+bool exit_prog27 = test_vector(accu_guess_p2_v,new_perm_v7);
+if (exit_prog27 == true){
+  std::cout << " Congratulation Player 2!\n  ";
+  break;}
+bool exit_prog28 = test_vector(accu_guess_p2_v,new_perm_v8);
+if (exit_prog28 == true){
+  std::cout << " Congratulation Player 2!\n   ";
+  break;}
+
+}
+
+count++;
+
+}
+
+
